@@ -7,7 +7,7 @@ export default class AddNoteContainer extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault()
 		const { title, body } = this.state
-		firebase.database().ref('notes/' + 1).set({
+		firebase.database().ref('notes/').push({
 	    title,
 	    body
 	  });
