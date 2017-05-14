@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase';
 
 export default class ListContainer extends Component {
@@ -23,10 +24,10 @@ export default class ListContainer extends Component {
 				{
 					this.state.notes.map(note => {
 						return (
-							<div key={note.id}>
+							<Link to={`/notes/${note.id}`} key={note.id}>
 								<h3>{note.title}</h3>
 								<p>{note.body}</p>
-							</div>
+							</Link>
 						)
 					})
 				}
