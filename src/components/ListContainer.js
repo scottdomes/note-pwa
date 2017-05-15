@@ -26,18 +26,18 @@ export default class ListContainer extends Component {
 						<button className="add">Add Note</button>
 					</Link>
 				</div>
-				{
-					this.state.notes.map(note => {
-						return (
-							<Link to={`/notes/${note.id}`} key={note.id}>
-								<div className="note">
-									<h3>{note.title}</h3>
-									<p>{note.body}</p>
-								</div>
-							</Link>
-						)
-					})
-				}
+				<div id="list-grid">
+					{
+						this.state.notes.map(note => {
+							return (
+								<Link to={`/notes/${note.id}`} key={note.id} className="note">
+									<h3 className="note-title">{note.title}</h3>
+									<p className="note-text">{note.body}</p>
+								</Link>
+							)
+						})
+					}
+				</div>
 			</div>
 		);
 	}
