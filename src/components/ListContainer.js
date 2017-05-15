@@ -20,7 +20,12 @@ export default class ListContainer extends Component {
 	render() {
 		return (
 			<div>
-				<h1>ListContainer</h1>
+				<div className="header">
+					<h1>Notes</h1>
+					<Link to="/add">
+						<button className="add">Add Note</button>
+					</Link>
+				</div>
 				{
 					this.state.notes.map(note => {
 						return (
