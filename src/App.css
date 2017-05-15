@@ -5,6 +5,11 @@ body {
   color: #2f2f2f;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 div#container {
   max-width: 500px;
   margin: 0 auto;
@@ -27,3 +32,35 @@ div.header {
   justify-content: space-between;
   align-items: center;
 }
+
+div.note {
+  width: 50%;
+  margin: 5px;
+  background-color: #FFFFFF;
+  padding: 5px;
+  box-sizing: border-box;
+
+  -webkit-box-shadow: 3px 3px 15px 0px rgba(50, 50, 50, 0.48);
+  -moz-box-shadow:    3px 3px 15px 0px rgba(50, 50, 50, 0.48);
+  box-shadow:         3px 3px 15px 0px rgba(50, 50, 50, 0.48);
+
+  /* FadeIn animation from here: https://fabriceleven.com/design/creating-fancy-css3-fade-in-animations-on-page-load/ */
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+ 
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+ 
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+ 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 

@@ -30,8 +30,10 @@ export default class ListContainer extends Component {
 					this.state.notes.map(note => {
 						return (
 							<Link to={`/notes/${note.id}`} key={note.id}>
-								<h3>{note.title}</h3>
-								<p>{note.body}</p>
+								<div className="note">
+									<h3>{note.title}</h3>
+									<p>{note.body}</p>
+								</div>
 							</Link>
 						)
 					})
